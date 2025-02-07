@@ -4,12 +4,12 @@ This application simulates fan control for the cooling of robotic subsystems. It
 
 ## How to Use
 
-### Option 1: Running the Prebuilt Executable (Recommended)
+### Option 1: Running the Prebuilt Executable (Recommended for Windows)
 1. **Locate the Executable**  
    - The standalone executable `FanController.exe` is provided in the `dist/` directory of the project.  
 
 2. **Run the Application**  
-   - Navigate to the `dist/` folder and double-click `FanController.exe` to start the application.  
+   - Navigate to the `dist/` folder and download `FanController.exe`. Then double-click on the downloaded file to start the application.  
    - No additional installation is required.  
 
 3. **Best Display Settings**  
@@ -17,7 +17,7 @@ This application simulates fan control for the cooling of robotic subsystems. It
    - This ensures all UI elements and data visualizations are properly displayed.
 
 ### Option 2: Running the Application from Source
-If you prefer to run the application using Python instead of the prebuilt executable, follow these steps:
+If you prefer to run the application using Python or can't run an executable file, follow these steps:
 
 1. **Download the Required Files**  
    - Ensure you have the following files in the same directory:  
