@@ -1,6 +1,6 @@
 # Robotic Subsystem Fan Control and Data Log
 
-This application simulates fan control for the cooling of robotic subsystems. It allows the user to set the number of fans and subsystems, along with the maximum RPM for each fan. The application tracks temperature and fan speed data over time and provides a graphical interface to monitor the data. If requested, the application can also log the data to a CSV file, which has the name 'temp_speed_log.csv'. Keep in mind that the file will be overwritten upon each new request to log data.
+This application simulates fan control for the cooling of robotic subsystems. It allows the user to set the number of fans and subsystems, along with the maximum RPM for each fan. The application tracks temperature and fan speed data over time and provides a graphical interface to monitor the data. If requested, the application can also log the data to a CSV file, which has the name 'temp_speed_log.csv' and will be located in the same directory as the application. Keep in mind that the file, unless moved, will be overwritten upon each new request to log data.
 
 ## How to Use
 
@@ -53,3 +53,4 @@ The project is organized as follows:
 - `backend.py`: Contains the backend logic for controlling the fans and logging data. It stores the last 300 data points for temperature and fan speed.
 - `ui.py`: Defines the graphical user interface using PyQt6. There are two UI states: one for setting the fan parameters and another for displaying the temperature and fan speed data.
 - `subsystem_simulation.py`: Simulates the subsystems and provides temperature outputs to the backend. The output temperatures have some random component to simulate real-world conditions, and are also based off the fan speeds.
+- `temp_speed_log.csv`: The CSV file where the data is logged if requested by the user. There is an example file in the repository with some sample data.
