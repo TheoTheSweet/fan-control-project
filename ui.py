@@ -92,17 +92,27 @@ class UI(QWidget):
         """)
         layout = QVBoxLayout()
 
-        # Title and description
+        # Title
         title = QLabel('Robotic Subsystem Fan Control and Data Log')
         title.setStyleSheet("font-size: 24px; font-weight: bold;")
+        title.setAlignment(Qt.AlignmentFlag.AlignCenter)
         layout.addWidget(title, alignment=Qt.AlignmentFlag.AlignCenter)
 
-        description = QLabel('This application simulates fan control for the cooling of robotic subsystems. You can '
-                             'set the number of fans and subsystems, along with the maximum RPM for each fan. The '
-                             'application will track the temperature and fan speed data over time. Press "Load '
-                             'Configuration" after setting the parameters.')
-        description.setStyleSheet("font-size: 14px;")
-        layout.addWidget(description, alignment=Qt.AlignmentFlag.AlignCenter)
+        # Description split into three parts
+        description_part1 = QLabel('This application simulates fan control for the cooling of robotic subsystems.')
+        description_part1.setStyleSheet("font-size: 14px;")
+        description_part1.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        layout.addWidget(description_part1, alignment=Qt.AlignmentFlag.AlignCenter)
+
+        description_part2 = QLabel('Initialize your robot here by choosing the number of subsystems, number of fans,')
+        description_part2.setStyleSheet("font-size: 14px;")
+        description_part2.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        layout.addWidget(description_part2, alignment=Qt.AlignmentFlag.AlignCenter)
+
+        description_part3 = QLabel('and maximum RPM for each fan. Press "Load Configuration" to begin the simulation.')
+        description_part3.setStyleSheet("font-size: 14px;")
+        description_part3.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        layout.addWidget(description_part3, alignment=Qt.AlignmentFlag.AlignCenter)
 
         # Input fields for number of fans and subsystems
         input_layout = QHBoxLayout()
@@ -195,21 +205,42 @@ class UI(QWidget):
         # Title
         title = QLabel('Temperature/Fan Speed Data')
         title.setStyleSheet("font-size: 24px; font-weight: bold;")
+        title.setAlignment(Qt.AlignmentFlag.AlignCenter)
         new_layout.addWidget(title, alignment=Qt.AlignmentFlag.AlignCenter)
 
+        # Description split into three parts
+        description_part1 = QLabel(
+            'These tables display the temperatures of the subsystems and the fan speeds of the fans.')
+        description_part1.setStyleSheet("font-size: 14px;")
+        description_part1.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        new_layout.addWidget(description_part1, alignment=Qt.AlignmentFlag.AlignCenter)
+
+        description_part2 = QLabel(
+            'Scroll down if a subsystem or fan is not visible. The graphs show the data over time.')
+        description_part2.setStyleSheet("font-size: 14px;")
+        description_part2.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        new_layout.addWidget(description_part2, alignment=Qt.AlignmentFlag.AlignCenter)
+
+        description_part3 = QLabel('Press "Export to CSV" to export the data to the same directory as the application '
+                                   'location (which will replace an exisiting CSV), or press "Return to Configuration" to '
+                                   'go back.')
+        description_part3.setStyleSheet("font-size: 14px;")
+        description_part3.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        new_layout.addWidget(description_part3, alignment=Qt.AlignmentFlag.AlignCenter)
+
         # Info labels
-        info_layout = QHBoxLayout()
+        info_layout = QVBoxLayout()
         self.num_fans_label = QLabel(f"# of fans: {self.backend.num_fans}")
         self.num_fans_label.setStyleSheet("font-size: 14px;")
-        info_layout.addWidget(self.num_fans_label)
+        info_layout.addWidget(self.num_fans_label, alignment=Qt.AlignmentFlag.AlignLeft)
 
         self.num_subsystems_label = QLabel(f"# of subsystems: {self.backend.num_subsystems}")
         self.num_subsystems_label.setStyleSheet("font-size: 14px;")
-        info_layout.addWidget(self.num_subsystems_label)
+        info_layout.addWidget(self.num_subsystems_label, alignment=Qt.AlignmentFlag.AlignLeft)
 
         self.elapsed_time_label = QLabel("Elapsed time: 00:00:00")
         self.elapsed_time_label.setStyleSheet("font-size: 14px;")
-        info_layout.addWidget(self.elapsed_time_label)
+        info_layout.addWidget(self.elapsed_time_label, alignment=Qt.AlignmentFlag.AlignLeft)
 
         new_layout.addLayout(info_layout)
 
