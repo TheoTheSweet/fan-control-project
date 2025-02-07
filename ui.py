@@ -7,7 +7,6 @@ from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
 
 
-
 # This class is used to create a widget that displays a log plot of a specific data series.
 class LogPlotWidget(QWidget):
     def __init__(self, log_data, index, y_min, y_max, y_label, parent=None):
@@ -65,6 +64,7 @@ class UI(QWidget):
         self.main_app = main_app
         self.backend = main_app.backend
         self.init_ui()
+
     # This method initializes the UI with the main menu layout.
     def init_ui(self):
         self.setWindowTitle('Robotic Subsystem Fan Control and Data Log')
@@ -338,6 +338,3 @@ class UI(QWidget):
             self.elapsed_time_label.setText(f"Elapsed time: {elapsed_time}")
         except Exception as e:
             print(f"Error updating UI: {e}")
-
-
-

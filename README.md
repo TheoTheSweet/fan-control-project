@@ -1,23 +1,55 @@
-# Fan Control System
+# Robotic Subsystem Fan Control and Data Log
 
-This project simulates a fan control system for a robot with multiple subsystems. The system monitors temperatures, adjusts fan speeds, and logs data. The user can interact with the system via a graphical user interface (GUI) built with PyQt6.
+This application simulates fan control for the cooling of robotic subsystems. It allows you to set the number of fans and subsystems, along with the maximum RPM for each fan. The application tracks temperature and fan speed data over time and provides a graphical interface to monitor the data.
 
-## Requirements
-- numpy
-- pandas
-- pyqtgraph
-- pyqt6
+## How to Use
 
-## Running the Application
-1. Install the required libraries using `pip install numpy pandas pyqtgraph pyqt6`.
-2. Run the `main.py` script: `python main.py`.
-3. The GUI will allow you to configure the system, view real-time data, and export it to a CSV file.
+### Option 1: Running the Prebuilt Executable (Recommended)
+1. **Locate the Executable**  
+   - The standalone executable `FanController.exe` is provided in the `dist/` directory of the project.  
 
-## Structure
-- `backend.py`: Manages fan speed, temperature data, and control logic.
-- `subsystem_simulation.py`: Simulates subsystem behavior and temperature variations.
-- `ui.py`: Provides a GUI for user interaction.
-- `main.py`: Runs the application.
+2. **Run the Application**  
+   - Navigate to the `dist/` folder and double-click `FanController.exe` to start the application.  
+   - No additional installation is required.  
 
-## Notes
-The system simulates fan speeds and temperatures in real-time, updating every 0.1 seconds. The CSV export functionality allows for saving system data for analysis.
+3. **Best Display Settings**  
+   - **For the best experience, maximize or fullscreen the application window.**  
+   - This ensures all UI elements and data visualizations are properly displayed.
+
+### Option 2: Running the Application from Source
+If you prefer to run the application using Python instead of the prebuilt executable, follow these steps:
+
+1. **Download the Required Files**  
+   - Ensure you have the following files in the same directory:  
+     - `main.py`  
+     - `backend.py`  
+     - `subsystem_simulation.py`  
+     - `ui.py`  
+
+2. **Install Required Libraries**  
+   - You need the following Python libraries:  
+     - `PyQt6`  
+     - `numpy`  
+     - `pandas`  
+     - `matplotlib`  
+   - Install them using:  
+     ```bash
+     pip install PyQt6 numpy pandas matplotlib
+     ```
+
+3. **Run the Application**  
+   ```bash
+   python main.py
+   ```
+
+4. **Maximize the Window**
+   - If running from source, ensure the application window is maximized for the best UI experience.
+
+## Project Structure
+
+The project is organized as follows:
+
+- `main.py`: Initializes and runs the application.
+- `backend.py`: Implements the core functionality and business logic.
+- `ui.py`: Defines the graphical user interface using PyQt6.
+- `subsystem_simulation.py`: Simulates the subsystems and provides temperature outputs to the backend.
